@@ -9,32 +9,38 @@ import {
   IconUp,
 } from '../../../Assets';
 import {Gap} from '../../Atoms';
+import LinearGradient from 'react-native-linear-gradient';
 
-const CardHome = () => {
+const CardHome = ({nominal1, nominal2, nominal3}) => {
   const datas = [
     {
       id: 1,
-      label: 'Total Tabungan',
+      title: 'Total Tabungan',
       nominal: 'Rp. 25.000.000',
     },
     {
       id: 2,
-      label: 'Pemasukan',
+      title: 'Pemasukan',
       nominal: 'Rp. 11.840.000',
     },
     {
       id: 3,
-      label: 'Pengeluaran',
-      nominal: '- Rp.4.500.000',
+      title: 'Pengeluaran',
+      nominal: '- Rp. 4.500.000',
     },
   ];
 
   return (
-    <View style={styles.cardInformation}>
+    <LinearGradient
+      colors={['#259868', '#2DB8BA', '#00d4ff']}
+      style={styles.cardInformation}
+      start={{x: 0, y: 1.4}}
+      end={{x: 1, y: 1.3}}>
+      {/* <View style={styles.cardInformation}> */}
       <View style={styles.wrapTopInformation}>
         <View style={styles.wrapSaving}>
           <View style={styles.wrapLabel}>
-            <Text style={styles.label}>{datas[0].label}</Text>
+            <Text style={styles.label}>Total Pengeluaran</Text>
             <IconUp />
           </View>
           <Text style={styles.nominal}>{datas[0].nominal}</Text>
@@ -49,7 +55,7 @@ const CardHome = () => {
         <View>
           <View style={styles.wrapLabel}>
             <IconIncome />
-            <Text style={styles.title}>{datas[1].label}</Text>
+            <Text style={styles.title}>{datas[1].title}</Text>
           </View>
           <Text style={styles.number}>{datas[1].nominal}</Text>
         </View>
@@ -57,12 +63,13 @@ const CardHome = () => {
         <View>
           <View style={styles.wrapLabel}>
             <IconExpense />
-            <Text style={styles.title}>{datas[2].label}</Text>
+            <Text style={styles.title}>{datas[2].title}</Text>
           </View>
-          <Text style={styles.number}>{datas[2].nominal}</Text>
+          <Text style={styles.numberExpense}>{datas[2].nominal}</Text>
         </View>
       </View>
-    </View>
+      {/* </View> */}
+    </LinearGradient>
   );
 };
 
@@ -126,5 +133,12 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     marginTop: 8,
     color: Colors.white,
+  },
+  numberExpense: {
+    fontSize: ResWidth(18),
+    fontWeight: '600',
+    marginTop: 8,
+    color: 'white',
+    opacity: 0.9,
   },
 });

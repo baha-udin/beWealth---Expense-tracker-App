@@ -12,6 +12,9 @@ target 'beWealth' do
     :hermes_enabled => false
   )
 
+  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
+  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
+
   target 'beWealthTests' do
     inherit! :complete
     # Pods for testing

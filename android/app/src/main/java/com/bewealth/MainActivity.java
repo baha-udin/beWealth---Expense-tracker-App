@@ -1,6 +1,9 @@
 package com.bewealth;
 
+import android.os.Bundle;
 import com.facebook.react.ReactActivity;
+import org.devio.rn.splashscreen.SplashScreen;
+import com.BV.LinearGradient.LinearGradientPackage;
 
 public class MainActivity extends ReactActivity {
 
@@ -12,4 +15,10 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "beWealth";
   }
+  @Override
+protected void onCreate(Bundle savedInstanceState) {
+  SplashScreen.show(this); 
+  super.onCreate(null);
+}
+
 }

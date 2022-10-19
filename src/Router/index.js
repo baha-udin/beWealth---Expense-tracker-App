@@ -159,7 +159,7 @@ const MainMenu = focused => {
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="Splash">
+    <Stack.Navigator initialRouteName="MainMenu">
       <Stack.Screen
         name="MainMenu"
         component={MainMenu}

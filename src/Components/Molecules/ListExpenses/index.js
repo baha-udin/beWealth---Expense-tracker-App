@@ -7,7 +7,7 @@ import {
   FlatList,
   ScrollView,
 } from 'react-native';
-import {Gap} from '../../Atoms';
+import {Gap, ItemList} from '../../Atoms';
 import styles from './style';
 
 const ListExpenses = ({onPress}) => {
@@ -75,7 +75,7 @@ const ListExpenses = ({onPress}) => {
   ];
 
   return (
-    <View style={styles.wrapListExpense}>
+    <ScrollView style={styles.wrapListExpense}>
       <View style={styles.wrapLabel}>
         <Text style={styles.label}>Histori Pengeluaran</Text>
         <TouchableOpacity onPress={onPress}>
@@ -83,24 +83,21 @@ const ListExpenses = ({onPress}) => {
         </TouchableOpacity>
       </View>
       <Gap height={16} />
-      <ScrollView>
+      <View>
         <View style={{flex: 1}}>
           {dataExpense.map(dataExpense => {
             return (
-              <View style={styles.wrapList} key={dataExpense.id}>
-                <View>
-                  <Text style={styles.title}>{dataExpense.title}</Text>
-                  <Text style={styles.date}>{dataExpense.date}</Text>
-                </View>
-                <View>
-                  <Text style={styles.nominal}>{dataExpense.nominal}</Text>
-                </View>
-              </View>
+              <ItemList
+                // unique={dataExpense.id}
+                title={dataExpense.title}
+                date={dataExpense.date}
+                nominal={dataExpense.nominal}
+              />
             );
           })}
         </View>
-      </ScrollView>
-    </View>
+      </View>
+    </ScrollView>
   );
 };
 

@@ -58,7 +58,7 @@ const Register = ({navigation}) => {
           <Gap height={ResWidth(20)} />
           <Button
             label={'Register'}
-            onPress={() => navigation.navigate('MainMenu')}
+            onPress={() => navigation.navigate('MainMenu', {screen: 'Home'})}
           />
           <Gap height={ResWidth(16)} />
           <Link

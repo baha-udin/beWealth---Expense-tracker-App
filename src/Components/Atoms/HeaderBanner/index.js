@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {HeaderIlustration} from '../../../Assets/images';
 import {Colors, Fonts, ResWidth, ResHeight} from '../../../Utils';
-import {IconAlert} from '../../../Assets';
+import {IconAlert} from '../../../Assets/icons';
 
 const HeaderBanner = ({time, callName, onPress}) => {
   return (
