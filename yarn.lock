@@ -3056,6 +3056,13 @@
   "resolved" "https://registry.npmjs.org/encodeurl/-/encodeurl-1.0.2.tgz"
   "version" "1.0.2"
 
+"encoding@^0.1.0":
+  "integrity" "sha512-ETBauow1T35Y/WZMkio9jiM0Z5xjHHmJ4XmjZOq1l/dXz3lr2sRn87nJy20RupqSh1F2m3HHPSp8ShIPQJrJ3A=="
+  "resolved" "https://registry.npmjs.org/encoding/-/encoding-0.1.13.tgz"
+  "version" "0.1.13"
+  dependencies:
+    "iconv-lite" "^0.6.2"
+
 "end-of-stream@^1.1.0":
   "integrity" "sha512-+uw1inIHVPQoaVuHzRyXd21icM+cnt4CzD5rW+NC1wjOUSTOs+Te7FOv7AhN7vS9x/oIyhLP5PR1H+phQAHu5Q=="
   "resolved" "https://registry.npmjs.org/end-of-stream/-/end-of-stream-1.4.4.tgz"
@@ -4038,6 +4045,13 @@
   "integrity" "sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw=="
   "resolved" "https://registry.npmjs.org/human-signals/-/human-signals-2.1.0.tgz"
   "version" "2.1.0"
+
+"iconv-lite@^0.6.2":
+  "integrity" "sha512-4fCk79wshMdzMp2rH06qWrJE4iolqLhCUH+OiuIgU++RB0+94NlDL81atO7GX55uUKueo0txHNtvEyI6D7WdMw=="
+  "resolved" "https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.6.3.tgz"
+  "version" "0.6.3"
+  dependencies:
+    "safer-buffer" ">= 2.1.2 < 3.0.0"
 
 "iconv-lite@0.4.24":
   "integrity" "sha512-v3MXnZAcvnywkTUEZomIActle7RXXeedOR31wwl7VlyoXO4Qi9arvSenNQWne1TcRwhCL1HwLI21bEqdpj8/rA=="
@@ -6476,6 +6490,14 @@
     "shell-quote" "^1.6.1"
     "ws" "^7"
 
+"react-dom@^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^18.0.0":
+  "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
+  "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
+  "version" "18.2.0"
+  dependencies:
+    "loose-envify" "^1.1.0"
+    "scheduler" "^0.23.0"
+
 "react-freeze@^1.0.0":
   "integrity" "sha512-ZnXwLQnGzrDpHBHiC56TXFXvmolPeMjTn1UOm610M4EXGzbEDR7oOIyS2ZiItgbs6eZc4oU/a0hpk8PrcKvv5g=="
   "resolved" "https://registry.npmjs.org/react-freeze/-/react-freeze-1.0.3.tgz"
@@ -6535,6 +6557,11 @@
     "flow-parser" "^0.121.0"
     "jscodeshift" "^0.11.0"
     "nullthrows" "^1.1.1"
+
+"react-native-error-boundary@^1.1.16":
+  "integrity" "sha512-yCbKhjGo2kMJBoUdy503L3oaInrLo1gychGr5e/IrezfPhfUGhfr8EtG2EKgZDcSfmvodBXvARq942hWis5sUA=="
+  "resolved" "https://registry.npmjs.org/react-native-error-boundary/-/react-native-error-boundary-1.1.16.tgz"
+  "version" "1.1.16"
 
 "react-native-gesture-handler@^2.7.1", "react-native-gesture-handler@>= 1.0.0":
   "integrity" "sha512-Rnak7U4v3ZB+vjVghv5CvAGS+UfRLsXUq7Nq+FycloxZ7jUZjBo+7rPnt+EdTIE2zc2pKhQHIQKcD+IAPg2Scg=="
@@ -6640,7 +6667,7 @@
     "prop-types" "^15.7.2"
     "yargs" "^16.1.1"
 
-"react-native@*", "react-native@>=0.57", "react-native@>=0.57.0", "react-native@>=0.59.0", "react-native@>=0.65.0", "react-native@0.66.4":
+"react-native@*", "react-native@>=0.57", "react-native@>=0.57.0", "react-native@>=0.57.7", "react-native@>=0.59.0", "react-native@>=0.65.0", "react-native@0.66.4":
   "integrity" "sha512-9vx5dlSfQlKbbDtr8+xMon6qsmSu7jvjdXWZpEKh3XVKpUidbbODv7048gwVKX8YAel1egeR7hN8vzSeI6ssTw=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.66.4.tgz"
   "version" "0.66.4"
@@ -6677,6 +6704,13 @@
     "whatwg-fetch" "^3.0.0"
     "ws" "^6.1.4"
 
+"react-number-format@^5.0.1":
+  "integrity" "sha512-Tyv5Ygb77ZbC5vUNNAfXwE+zQKaN0LsTo7GwjudU/MckXa7beVAlFddq7QQnGobEglyq+4zsBltKvM9HMQD0GA=="
+  "resolved" "https://registry.npmjs.org/react-number-format/-/react-number-format-5.0.1.tgz"
+  "version" "5.0.1"
+  dependencies:
+    "prop-types" "^15.7.2"
+
 "react-refresh@^0.4.0":
   "integrity" "sha512-Hwln1VNuGl/6bVwnd0Xdn1e84gT/8T9aYNL+HAKDArLCS7LWjwr7StE30IEYbIkx0Vi3vs+coQxe+SQDbGbbpA=="
   "resolved" "https://registry.npmjs.org/react-refresh/-/react-refresh-0.4.3.tgz"
@@ -6700,7 +6734,7 @@
     "react-shallow-renderer" "^16.13.1"
     "scheduler" "^0.20.2"
 
-"react@*", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@>=16.0", "react@>=17.0.0", "react@17.0.2":
+"react@*", "react@^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^18.0.0", "react@^16.0.0 || ^17.0.0 || ^18.0.0", "react@^16.8.0 || ^17.0.0 || ^18.0.0", "react@^18.2.0", "react@>=16.0", "react@>=16.6.0", "react@>=17.0.0", "react@17.0.2":
   "integrity" "sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA=="
   "resolved" "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   "version" "17.0.2"
@@ -6975,7 +7009,7 @@
   dependencies:
     "ret" "~0.1.10"
 
-"safer-buffer@>= 2.1.2 < 3":
+"safer-buffer@>= 2.1.2 < 3", "safer-buffer@>= 2.1.2 < 3.0.0":
   "integrity" "sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg=="
   "resolved" "https://registry.npmjs.org/safer-buffer/-/safer-buffer-2.1.2.tgz"
   "version" "2.1.2"
@@ -7007,6 +7041,13 @@
   dependencies:
     "loose-envify" "^1.1.0"
     "object-assign" "^4.1.1"
+
+"scheduler@^0.23.0":
+  "integrity" "sha512-CtuThmgHNg7zIZWAXi3AsyIzA3n4xx7aNyjwC2VJldO2LMVDhFK+63xGqq6CsJH4rTAt6/M+N4GhZiDYPx9eUw=="
+  "resolved" "https://registry.npmjs.org/scheduler/-/scheduler-0.23.0.tgz"
+  "version" "0.23.0"
+  dependencies:
+    "loose-envify" "^1.1.0"
 
 "semver-compare@^1.0.0":
   "integrity" "sha512-YM3/ITh2MJ5MtzaM429anh+x2jiLVjqILF4m4oyQB18W7Ggea7BfqdH/wGMK7dDiMghv/6WG7znWMwUDzJiXow=="

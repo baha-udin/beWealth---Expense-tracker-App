@@ -32,7 +32,7 @@ const CardHome = ({nominal1, nominal2, nominal3}) => {
 
   return (
     <LinearGradient
-      colors={['#259868', '#2DB8BA', '#00d4ff']}
+      colors={[Colors.background.green, '#259868']}
       style={styles.cardInformation}
       start={{x: 0, y: 1.4}}
       end={{x: 1, y: 1.3}}>
@@ -40,7 +40,7 @@ const CardHome = ({nominal1, nominal2, nominal3}) => {
       <View style={styles.wrapTopInformation}>
         <View style={styles.wrapSaving}>
           <View style={styles.wrapLabel}>
-            <Text style={styles.label}>Total Pengeluaran</Text>
+            <Text style={styles.label}>Total Tabungan</Text>
             <IconUp />
           </View>
           <Text style={styles.nominal}>{datas[0].nominal}</Text>

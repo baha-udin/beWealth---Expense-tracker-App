@@ -9,16 +9,19 @@ import {
 } from 'react-native';
 import {Gap} from '../../Atoms';
 import {ResWidth, Colors} from '../../../Utils';
+import moment from 'moment';
+import {Number} from '../../Atoms';
 
 const ItemList = ({key, title, date, nominal}) => {
+  const convertDate = moment(date).format('D MMMM YYYY');
   return (
     <View style={styles.wrapList} key={key}>
       <View>
         <Text style={styles.title}>{title}</Text>
-        <Text style={styles.date}>{date}</Text>
+        <Text style={styles.date}>{convertDate}</Text>
       </View>
       <View>
-        <Text style={styles.nominal}>Rp. {nominal}</Text>
+        <Number number={nominal} style={styles.nominal} />
       </View>
     </View>
   );
@@ -47,8 +50,8 @@ const styles = StyleSheet.create({
     letterSpacing: 0.5,
   },
   nominal: {
-    fontSize: ResWidth(16),
-    fontWeight: '600',
+    fontSize: ResWidth(15),
+    fontWeight: '500',
     color: Colors.text.green2,
     letterSpacing: 0.5,
   },

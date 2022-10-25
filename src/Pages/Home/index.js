@@ -16,7 +16,6 @@ import AddExpense from '../AddExpense';
 import {BottomSheet} from 'react-native-btr';
 
 const Home = ({navigation}) => {
-  const [visible, setVisible] = useState(false);
   const [name, setName] = useState('');
   const [calculate, setCalculate] = useState([]);
   const [expensesData, setExpensesData] = useState([]);
@@ -38,18 +37,15 @@ const Home = ({navigation}) => {
     Axios.get('http://localhost:3000/expenses').then(response => {
       data = response.data;
       setExpensesData(data);
+      console.log(data);
     });
   };
 
   useEffect(() => {
     GetTotalData();
-    setVisible(false);
     getProfile();
     getExpenses();
   }, []);
-  const toggleBottomNavigationView = () => {
-    setVisible(!visible);
-  };
 
   return (
     <View style={styles.container}>
@@ -78,22 +74,6 @@ const Home = ({navigation}) => {
           );
         })}
       </ScrollView>
-      {/* <ListExpenses
-        onPress={() => navigation.navigate('MainMenu', {screen: 'Statistic'})}
-      /> */}
-      <View>
-        <TouchableOpacity
-          onPress={toggleBottomNavigationView}
-          style={styles.wrapBottomSheet}>
-          <Add />
-        </TouchableOpacity>
-        <BottomSheet
-          visible={visible}
-          onBackButtonPress={toggleBottomNavigationView}
-          onBackdropPress={toggleBottomNavigationView}>
-          <AddExpense />
-        </BottomSheet>
-      </View>
     </View>
   );
 };

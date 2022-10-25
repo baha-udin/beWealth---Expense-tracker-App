@@ -8,14 +8,14 @@ import {
   View,
   Image,
 } from 'react-native';
+import Axios from 'axios';
+import DateTimePicker from '@react-native-community/datetimepicker';
+import moment from 'moment';
 import SelectDropdown from 'react-native-select-dropdown';
 import {Colors, Fonts, ResHeight, ResWidth} from '../../../Utils';
 import {IconArrowDownBlack, IconDate} from '../../../Assets';
 import {Button, Gap} from '../../Atoms';
-import DateTimePicker from '@react-native-community/datetimepicker';
-import moment from 'moment';
 import {styles} from './style';
-import {BottomSheet} from 'react-native-btr';
 
 const listExpense = [
   'Asuransi',
@@ -58,9 +58,29 @@ const ExpenseCard = ({navigation}) => {
 
   const handleSubmit = () => {
     setVisible(!visible);
-    console.log(
-      `Category: ${category}, total pengeluaran: ${total}, tanggal: ${date}, catatan: ${notes}`,
-    );
+    const data = {
+      category: category,
+      nominal: total,
+      date: date,
+      notes: notes,
+    };
+
+    Axios.post('http://localhost:3000/expenses', data, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(resp => {
+        console.log(resp.data);
+        navigation.navigate('MainMenu', {screen: 'Home'});
+        setCategory('');
+        setTotal('');
+        setNotes('');
+        setVisible(false);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
 
   // logic show picker

@@ -46,10 +46,10 @@ const MainMenu = focused => {
         tabBarShowLabel: false,
         tabBarStyle: {
           position: 'absolute',
-          elevation: 0,
           backgroundColor: 'white',
-          borderTopLeftRadius: 15,
-          borderTopRightRadius: 15,
+          bottom: 24,
+          marginHorizontal: 20,
+          borderRadius: 15,
           height: ResHeight(70),
           paddingTop: Platform.OS == 'ios' ? 4 : 0,
           paddingBottom: Platform.OS == 'ios' ? 24 : 0,
@@ -104,7 +104,29 @@ const MainMenu = focused => {
           ),
         }}
       />
-
+      {/* Ad AddExpense */}
+      <Tab.Screen
+        name="AddExpense"
+        component={AddExpense}
+        options={{
+          tabBarIcon: ({focused}) => (
+            <View
+              style={{
+                marginBottom: 36,
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}>
+              <Add
+                style={{
+                  width: 32,
+                  height: 32,
+                  marginBottom: 4,
+                }}
+              />
+            </View>
+          ),
+        }}
+      />
       <Tab.Screen
         name="Statistic"
         component={Statistic}

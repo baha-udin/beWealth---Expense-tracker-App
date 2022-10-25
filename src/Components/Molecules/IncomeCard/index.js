@@ -16,16 +16,17 @@ import styles from './style';
 import SelectDropdown from 'react-native-select-dropdown';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import moment from 'moment';
+import Axios from 'axios';
 
 const listIncome = [
   'Gaji bulanan',
   'Side project',
   'Bonus project',
   'Investasi',
-  'Pemberian Orang',
+  'Donasi Orang',
 ];
 
-const IncomeCard = () => {
+const IncomeCard = ({navigation}) => {
   // Logic Date Picker
   const [datePicker, setDatePicker] = useState(false);
 
@@ -36,9 +37,29 @@ const IncomeCard = () => {
   const [notes, setNotes] = useState();
 
   const handleSubmit = () => {
-    console.log(
-      `Category: ${category}, total pengeluaran: ${total}, tanggal: ${date}, catatan: ${notes}`,
-    );
+    const data = {
+      category: category,
+      nominal: total,
+      date: date,
+      notes: notes,
+    };
+
+    Axios.post('http://localhost:3000/income', data, {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then(resp => {
+        console.log(resp.data);
+        navigation.navigate('MainMenu', {screen: 'Home'});
+        setCategory('');
+        setTotal('');
+        setNotes('');
+        setVisible(false);
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
 
   // logic show picker

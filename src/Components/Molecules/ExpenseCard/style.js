@@ -27,8 +27,8 @@ export const styles = StyleSheet.create({
   dropDown: {
     backgroundColor: Colors.white,
     borderRadius: 10,
-    height: '100%',
-    marginTop: '-100%',
+    height: '80%',
+    marginTop: '-15%',
   },
   textDropDown: {
     fontSize: ResWidth(16),
