@@ -16,6 +16,7 @@ import {Colors, Fonts, ResHeight, ResWidth} from '../../../Utils';
 import {IconArrowDownBlack, IconDate} from '../../../Assets';
 import {Button, Gap} from '../../Atoms';
 import {styles} from './style';
+import {showMessage, hideMessage} from 'react-native-flash-message';
 
 const listExpense = [
   'Asuransi',
@@ -48,7 +49,6 @@ const listExpense = [
 const ExpenseCard = ({navigation}) => {
   // Logic Date Picker
   const [datePicker, setDatePicker] = useState(false);
-  const [visible, setVisible] = useState(false);
 
   // state empty
   const [category, setCategory] = useState();
@@ -57,30 +57,44 @@ const ExpenseCard = ({navigation}) => {
   const [notes, setNotes] = useState();
 
   const handleSubmit = () => {
-    setVisible(!visible);
-    const data = {
-      category: category,
-      nominal: total,
-      date: date,
-      notes: notes,
-    };
-
-    Axios.post('http://localhost:3000/expenses', data, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then(resp => {
-        console.log(resp.data);
-        navigation.navigate('MainMenu', {screen: 'Home'});
-        setCategory('');
-        setTotal('');
-        setNotes('');
-        setVisible(false);
-      })
-      .catch(error => {
-        console.log(error);
+    if (!total) {
+      showMessage({
+        message: 'Total expenses is empty, lets input',
+        type: 'danger',
       });
+    } else if (!category) {
+      showMessage({
+        message: 'Please input category expense',
+        type: 'danger',
+      });
+    } else if (!date) {
+      showMessage({
+        message: 'Please input your date',
+        type: 'danger',
+      });
+    } else {
+      const data = {
+        category: category,
+        nominal: total,
+        date: date,
+        notes: notes,
+      };
+      Axios.post('http://localhost:3000/expenses', data, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+        .then(resp => {
+          console.log(resp.data);
+          navigation.navigate('MainMenu', {screen: 'Home'});
+          setCategory('');
+          setTotal('');
+          setNotes('');
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
   };
 
   // logic show picker

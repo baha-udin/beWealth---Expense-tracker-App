@@ -9,18 +9,16 @@ import {
 } from 'react-native';
 import {styles} from './style';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
-import HeaderCustom from './../../Components/Molecules/HeaderCustom';
 import {Colors, Fonts, ResWidth} from '../../Utils';
 import {ExpenseCard, IncomeCard} from './../../Components';
 const Top = createMaterialTopTabNavigator();
-import {BottomSheet} from 'react-native-btr';
+
+// setCalculate([0].calculate);
+// setExpensesData([0].expenses);
+// setIncomeData([0].income);
 
 const AddExpense = () => {
   const navigation = useNavigation();
-  const [visible, setVisible] = useState(false);
-  const handleBack = () => {
-    setVisible(false);
-  };
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={'black'} barStyle="dark-content" />

@@ -2,9 +2,10 @@ import React, {useEffect} from 'react';
 import {StyleSheet, Text, View, Platform, StatusBar} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import Router from './Router';
-import 'react-native-gesture-handler';
 import SplashScreen from 'react-native-splash-screen';
 import ErrorBoundary from 'react-native-error-boundary';
+import 'react-native-gesture-handler';
+import FlashMessage from 'react-native-flash-message';
 
 const App = () => {
   useEffect(() => {
@@ -21,6 +22,7 @@ const App = () => {
       <NavigationContainer>
         <Router />
       </NavigationContainer>
+      <FlashMessage position="top" />
     </ErrorBoundary>
   );
 };

@@ -17,13 +17,15 @@ import SelectDropdown from 'react-native-select-dropdown';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import moment from 'moment';
 import Axios from 'axios';
+import {showMessage, hideMessage} from 'react-native-flash-message';
 
 const listIncome = [
   'Gaji bulanan',
   'Side project',
   'Bonus project',
   'Investasi',
-  'Donasi Orang',
+  'Donation',
+  'Lainya',
 ];
 
 const IncomeCard = ({navigation}) => {
@@ -37,29 +39,46 @@ const IncomeCard = ({navigation}) => {
   const [notes, setNotes] = useState();
 
   const handleSubmit = () => {
-    const data = {
-      category: category,
-      nominal: total,
-      date: date,
-      notes: notes,
-    };
-
-    Axios.post('http://localhost:3000/income', data, {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then(resp => {
-        console.log(resp.data);
-        navigation.navigate('MainMenu', {screen: 'Home'});
-        setCategory('');
-        setTotal('');
-        setNotes('');
-        setVisible(false);
-      })
-      .catch(error => {
-        console.log(error);
+    if (!total) {
+      showMessage({
+        message: 'Total Income is empty, lets input',
+        type: 'danger',
       });
+    } else if (!category) {
+      showMessage({
+        message: 'Please input category income',
+        type: 'danger',
+      });
+    } else if (!date) {
+      showMessage({
+        message: 'Please input your date',
+        type: 'danger',
+      });
+    } else {
+      const data = {
+        category: category,
+        nominal: total,
+        date: date,
+        notes: notes,
+      };
+
+      Axios.post('http://localhost:3000/income', data, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+        .then(resp => {
+          console.log(resp.data);
+          navigation.navigate('MainMenu', {screen: 'Home'});
+          setCategory('');
+          setTotal('');
+          setNotes('');
+          setVisible(false);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
   };
 
   // logic show picker

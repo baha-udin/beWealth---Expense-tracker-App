@@ -16,9 +16,21 @@ import AddExpense from '../AddExpense';
 import {BottomSheet} from 'react-native-btr';
 
 const Home = ({navigation}) => {
-  const [name, setName] = useState('');
+  const [name, setName] = useState();
   const [calculate, setCalculate] = useState([]);
   const [expensesData, setExpensesData] = useState([]);
+  const [incomeData, setIncomeData] = useState([]);
+
+  const getAllData = () => {
+    Axios.get('http://localhost:3000/data').then(response => {
+      data = response.data;
+      setName(data[0].profile.name);
+      setCalculate(data[0].calculate);
+      setExpensesData(data[0].expenses);
+      setIncomeData(data[0].income);
+      console.log(data[0].profile);
+    });
+  };
 
   const getProfile = () => {
     Axios.get('http://localhost:3000/profile').then(response => {
@@ -42,15 +54,16 @@ const Home = ({navigation}) => {
   };
 
   useEffect(() => {
-    GetTotalData();
-    getProfile();
-    getExpenses();
+    // GetTotalData();
+    // getProfile();
+    // getExpenses();
+    getAllData();
   }, []);
 
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={'black'} barStyle="light-content" />
-      <HeaderBanner time="Selamat Malam" callName={name.name} />
+      <HeaderBanner time="Selamat Malam" callName={name} />
       <CardHome />
       <Gap height={20} />
       {/* Section List History expense */}
@@ -66,7 +79,7 @@ const Home = ({navigation}) => {
         {expensesData.map(data => {
           return (
             <ItemList
-              unique={data.id}
+              key={data.id}
               title={data.category}
               date={data.date}
               nominal={data.nominal}

@@ -16,7 +16,7 @@ public class MainActivity extends ReactActivity {
     return "beWealth";
   }
   @Override
-protected void onCreate(Bundle savedInstanceState) {
+  protected void onCreate(Bundle savedInstanceState) {
   SplashScreen.show(this); 
   super.onCreate(null);
 }
