@@ -1,19 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  ScrollView,
-  StatusBar,
-} from 'react-native';
+import {View, ScrollView, StatusBar} from 'react-native';
 import Axios from 'axios';
 import styles from './style';
-import {Add, IconAlert} from '../../Assets/icons';
 import {CardHome, Gap, HeaderBanner, ItemList, Section} from '../../Components';
-import AddExpense from '../AddExpense';
-import {BottomSheet} from 'react-native-btr';
 
 const Home = ({navigation}) => {
   const [name, setName] = useState();
@@ -28,35 +17,10 @@ const Home = ({navigation}) => {
       setCalculate(data[0].calculate);
       setExpensesData(data[0].expenses);
       setIncomeData(data[0].income);
-      console.log(data[0].profile);
-    });
-  };
-
-  const getProfile = () => {
-    Axios.get('http://localhost:3000/profile').then(response => {
-      data = response.data;
-      setName(data);
-    });
-  };
-  const GetTotalData = () => {
-    Axios.get('http://localhost:3000/calculate').then(response => {
-      data = response.data;
-      setCalculate(data);
-      console.log(data[0].title);
-    });
-  };
-  const getExpenses = () => {
-    Axios.get('http://localhost:3000/expenses').then(response => {
-      data = response.data;
-      setExpensesData(data);
-      console.log(data);
     });
   };
 
   useEffect(() => {
-    // GetTotalData();
-    // getProfile();
-    // getExpenses();
     getAllData();
   }, []);
 
@@ -64,7 +28,11 @@ const Home = ({navigation}) => {
     <View style={styles.container}>
       <StatusBar backgroundColor={'black'} barStyle="light-content" />
       <HeaderBanner time="Selamat Malam" callName={name} />
-      <CardHome />
+      <CardHome
+        totalTabungan={calculate[0].nominal}
+        totalIncome={calculate[1].nominal}
+        totalExpense={calculate[2].nominal}
+      />
       <Gap height={20} />
       {/* Section List History expense */}
       <ScrollView

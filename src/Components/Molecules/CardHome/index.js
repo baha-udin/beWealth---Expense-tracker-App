@@ -8,28 +8,10 @@ import {
   IconIncome,
   IconUp,
 } from '../../../Assets';
-import {Gap} from '../../Atoms';
+import {Gap, Number} from '../../Atoms';
 import LinearGradient from 'react-native-linear-gradient';
 
-const CardHome = ({nominal1, nominal2, nominal3}) => {
-  const datas = [
-    {
-      id: 1,
-      title: 'Total Tabungan',
-      nominal: 'Rp. 25.000.000',
-    },
-    {
-      id: 2,
-      title: 'Pemasukan',
-      nominal: 'Rp. 11.840.000',
-    },
-    {
-      id: 3,
-      title: 'Pengeluaran',
-      nominal: '- Rp. 4.500.000',
-    },
-  ];
-
+const CardHome = ({totalTabungan, totalExpense, totalIncome}) => {
   return (
     <LinearGradient
       colors={[Colors.background.green, '#259868']}
@@ -43,7 +25,7 @@ const CardHome = ({nominal1, nominal2, nominal3}) => {
             <Text style={styles.label}>Total Tabungan</Text>
             <IconUp />
           </View>
-          <Text style={styles.nominal}>{datas[0].nominal}</Text>
+          <Number number={totalTabungan} style={styles.nominal} />
         </View>
         <TouchableOpacity>
           <IconBullet />
@@ -55,17 +37,17 @@ const CardHome = ({nominal1, nominal2, nominal3}) => {
         <View>
           <View style={styles.wrapLabel}>
             <IconIncome />
-            <Text style={styles.title}>{datas[1].title}</Text>
+            <Text style={styles.title}>Pemasukan</Text>
           </View>
-          <Text style={styles.number}>{datas[1].nominal}</Text>
+          <Number number={totalIncome} style={styles.number} />
         </View>
         {/* section Expense */}
         <View>
           <View style={styles.wrapLabel}>
             <IconExpense />
-            <Text style={styles.title}>{datas[2].title}</Text>
+            <Text style={styles.title}>Pengeluaran</Text>
           </View>
-          <Text style={styles.numberExpense}>{datas[2].nominal}</Text>
+          <Number number={totalExpense} style={styles.number} />
         </View>
       </View>
       {/* </View> */}
