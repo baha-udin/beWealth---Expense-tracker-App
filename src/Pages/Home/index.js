@@ -3,6 +3,7 @@ import {View, ScrollView, StatusBar} from 'react-native';
 import Axios from 'axios';
 import styles from './style';
 import {CardHome, Gap, HeaderBanner, ItemList, Section} from '../../Components';
+import {IconAlert} from '../../Assets/icons';
 
 const Home = ({navigation}) => {
   const [name, setName] = useState();
@@ -17,6 +18,7 @@ const Home = ({navigation}) => {
       setCalculate(data[0].calculate);
       setExpensesData(data[0].expenses);
       setIncomeData(data[0].income);
+      console.log(data[0].calculate[0].nominal);
     });
   };
 
@@ -27,11 +29,11 @@ const Home = ({navigation}) => {
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={'black'} barStyle="light-content" />
-      <HeaderBanner time="Selamat Malam" callName={name} />
+      <HeaderBanner time="Selamat Malam" callName={name} Icon={IconAlert} />
       <CardHome
-        totalTabungan={calculate[0].nominal}
-        totalIncome={calculate[1].nominal}
-        totalExpense={calculate[2].nominal}
+        TotalTabungan={`Rp. ${calculate[0].nominal}`}
+        Income={`Rp. ${calculate[1].nominal}`}
+        Expenses={`Rp. ${calculate[2].nominal}`}
       />
       <Gap height={20} />
       {/* Section List History expense */}

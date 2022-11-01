@@ -41,6 +41,7 @@ const Tab = createBottomTabNavigator();
 const MainMenu = focused => {
   return (
     <Tab.Navigator
+      initialRouteName="Statistic"
       screenOptions={{
         headerShown: false,
         tabBarShowLabel: false,
@@ -81,15 +82,15 @@ const MainMenu = focused => {
         }}
       />
       <Tab.Screen
-        name="Purpose"
-        component={Purpose}
+        name="Statistic"
+        component={Statistic}
         options={{
           tabBarIcon: ({focused}) => (
             <View style={styles.wrapIcon}>
               {focused ? (
-                <WalletActive style={styles.icon} />
+                <StatisticActive style={styles.icon} />
               ) : (
-                <WalletInActive style={styles.icon} />
+                <StatisticInActive style={styles.icon} />
               )}
               <Text
                 style={{
@@ -98,12 +99,13 @@ const MainMenu = focused => {
                   fontFamily: focused ? Fonts.primary[600] : Fonts.primary[400],
                   letterSpacing: 0.4,
                 }}>
-                Purpose
+                Statistic
               </Text>
             </View>
           ),
         }}
       />
+
       {/* Ad AddExpense */}
       <Tab.Screen
         name="AddExpense"
@@ -128,15 +130,15 @@ const MainMenu = focused => {
         }}
       />
       <Tab.Screen
-        name="Statistic"
-        component={Statistic}
+        name="Purpose"
+        component={Purpose}
         options={{
           tabBarIcon: ({focused}) => (
             <View style={styles.wrapIcon}>
               {focused ? (
-                <StatisticActive style={styles.icon} />
+                <WalletActive style={styles.icon} />
               ) : (
-                <StatisticInActive style={styles.icon} />
+                <WalletInActive style={styles.icon} />
               )}
               <Text
                 style={{
@@ -145,7 +147,7 @@ const MainMenu = focused => {
                   fontFamily: focused ? Fonts.primary[600] : Fonts.primary[400],
                   letterSpacing: 0.4,
                 }}>
-                Statistic
+                Purpose
               </Text>
             </View>
           ),

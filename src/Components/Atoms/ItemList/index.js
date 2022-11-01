@@ -35,6 +35,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 16,
+    borderBottomColor: 'gray',
+    borderBottomWidth: 0.2,
   },
   title: {
     fontSize: ResWidth(15),

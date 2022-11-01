@@ -11,7 +11,7 @@ import {HeaderIlustration} from '../../../Assets/images';
 import {Colors, Fonts, ResWidth, ResHeight} from '../../../Utils';
 import {IconAlert} from '../../../Assets/icons';
 
-const HeaderBanner = ({time, callName, onPress}) => {
+const HeaderBanner = ({time, callName, onPress, Icon}) => {
   return (
     <View style={styles.header}>
       <Image source={HeaderIlustration} style={styles.imgHeader} />
@@ -21,7 +21,8 @@ const HeaderBanner = ({time, callName, onPress}) => {
           <Text style={styles.callName}>{callName}</Text>
         </View>
         <TouchableOpacity style={styles.wrapAlert} onPress={onPress}>
-          <IconAlert />
+          {/* <IconAlert /> */}
+          <Icon />
         </TouchableOpacity>
       </View>
     </View>
