@@ -1,40 +1,69 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {useNavigation} from '@react-navigation/native';
 import {
   StyleSheet,
   Text,
   View,
   StatusBar,
-  useColorScheme,
   TouchableOpacity,
 } from 'react-native';
-import {IconBack, IconAlert} from '../../Assets';
-import {HeaderBanner} from '../../Components/Atoms';
 import styles from './style';
-import {ResWidth, ResHeight} from '../../Utils';
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import {Colors, Fonts, ResWidth} from '../../Utils';
+import {
+  ListDays,
+  ListWeekly,
+  ListMonthly,
+  ListAnnual,
+} from './../../Components';
+const Top = createMaterialTopTabNavigator();
 
-const Statistic = () => {
+const Statistic = focused => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor="black" barStyle="dark-content" />
-      {/* Section Header */}
-      <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-          marginTop: Platform.OS == 'ios' ? -220 : -250,
-          paddingHorizontal: ResWidth(24),
-          backgroundColor: 'red',
-          flex: 1,
-        }}>
-        <TouchableOpacity style={styles.wrapAlert}>
-          <IconBack />
-        </TouchableOpacity>
-        <View style={styles.wrapUser}>
-          <Text style={styles.title}>Statistic</Text>
-        </View>
-        <TouchableOpacity style={styles.wrapAlert}>
-          <IconAlert />
-        </TouchableOpacity>
+      <StatusBar backgroundColor={'black'} barStyle="dark-content" />
+      <View style={styles.wrapHeader}>
+        <Text style={styles.title}>Recap</Text>
+      </View>
+      <View style={styles.wrapTopMenu}>
+        <Top.Navigator
+          screenOptions={{
+            swipeEnabled: true,
+            tabBarActiveTintColor: Colors.white,
+            tabBarInactiveTintColor: Colors.black,
+            tabBarStyle: {
+              alignSelf: 'center',
+              justifyContent: 'center',
+              width: '100%',
+              height: 56,
+              borderRadius: 100,
+              backgroundColor: '#f8f8f8',
+              marginBottom: 16,
+            },
+            tabBarIndicatorStyle: {
+              width: '16%',
+              height: 'auto',
+              top: '12%',
+              bottom: '10%',
+              left: 10,
+              right: 10,
+              paddingHorizontal: 4,
+              borderRadius: 30,
+              backgroundColor: Colors.background.green,
+              marginRight: '5%',
+            },
+            tabBarLabelStyle: ({focused}) => ({
+              textTransform: 'lowercase',
+              color: focused ? Colors.white : Colors.black,
+              fontFamily: Fonts.primary[300],
+            }),
+          }}>
+          <Top.Screen name="Perhari" component={ListDays} />
+          <Top.Screen name="Minggu" component={ListWeekly} />
+          <Top.Screen name="Bulanan" component={ListMonthly} />
+          <Top.Screen name="Tahunan" component={ListAnnual} />
+        </Top.Navigator>
       </View>
     </View>
   );

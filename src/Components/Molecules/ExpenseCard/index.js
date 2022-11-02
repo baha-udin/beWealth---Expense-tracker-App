@@ -17,6 +17,7 @@ import {IconArrowDownBlack, IconDate} from '../../../Assets';
 import {Button, Gap} from '../../Atoms';
 import {styles} from './style';
 import {showMessage, hideMessage} from 'react-native-flash-message';
+import MaskInput, {createNumberMask} from 'react-native-mask-input';
 
 const listExpense = [
   'Asuransi',
@@ -114,6 +115,12 @@ const ExpenseCard = ({navigation}) => {
     setDate(currentDate);
     setDatePicker(false);
   };
+
+  const RupiahMask = createNumberMask({
+    prefix: ['Rp.', ''],
+    delimiter: '.',
+    precision: 0,
+  });
   return (
     <ScrollView style={styles.wrap}>
       {/* Section pick category */}
@@ -142,17 +149,20 @@ const ExpenseCard = ({navigation}) => {
       {/* section piick total expense */}
       <View style={styles.wrapLabel}>
         <Text style={styles.label}>Total</Text>
-        <TextInput
+        <MaskInput
+          value={total}
+          onChangeText={(masked, value) => {
+            setTotal(value);
+          }}
+          mask={RupiahMask}
           placeholder="total pengeluaran"
           style={styles.TextInput}
           placeholderTextColor={Colors.text.gray}
           keyboardType={'numeric'}
-          value={total}
-          onChangeText={value => setTotal(value)}
         />
       </View>
       <Gap height={8} />
-      {/* section get date */}
+      {/* SECTION DATE */}
       <View style={styles.wrapLabel}>
         {datePicker && (
           <DateTimePicker
@@ -187,6 +197,7 @@ const ExpenseCard = ({navigation}) => {
         </TouchableOpacity>
       </View>
       <Gap height={8} />
+      {/* SECTION NOTES */}
       <View style={styles.wrapLabel}>
         <Text style={styles.label}>Catatan</Text>
         <TextInput

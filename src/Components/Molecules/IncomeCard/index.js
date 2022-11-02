@@ -9,15 +9,15 @@ import {
   Image,
 } from 'react-native';
 import {IconArrowDownBlack, IconDate} from '../../../Assets';
-import {Gap} from '../../Atoms';
+import {Gap, Button} from '../../Atoms';
 import {Colors} from '../../../Utils';
-import {Button} from '../../Atoms';
 import styles from './style';
 import SelectDropdown from 'react-native-select-dropdown';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import moment from 'moment';
 import Axios from 'axios';
 import {showMessage, hideMessage} from 'react-native-flash-message';
+import MaskInput, {createNumberMask} from 'react-native-mask-input';
 
 const listIncome = [
   'Gaji bulanan',
@@ -100,6 +100,12 @@ const IncomeCard = ({navigation}) => {
     setDate(currentDate);
   };
 
+  const RupiahMask = createNumberMask({
+    prefix: ['Rp.', ''],
+    delimiter: '.',
+    precision: 0,
+  });
+
   return (
     <ScrollView style={styles.wrap}>
       <View style={styles.wrapLabel}>
@@ -126,13 +132,16 @@ const IncomeCard = ({navigation}) => {
       <Gap height={8} />
       <View style={styles.wrapLabel}>
         <Text style={styles.label}>Total</Text>
-        <TextInput
+        <MaskInput
+          value={total}
+          onChangeText={(masked, value) => {
+            setTotal(value);
+          }}
+          mask={RupiahMask}
           placeholder="total pemasukan"
           style={styles.TextInput}
           placeholderTextColor={Colors.text.gray}
           keyboardType={'numeric'}
-          value={total}
-          onChangeText={value => setTotal(value)}
         />
       </View>
       <Gap height={8} />

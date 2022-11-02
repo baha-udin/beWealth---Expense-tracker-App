@@ -1,70 +1,61 @@
 import React, {useState, useEffect} from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  ScrollView,
-  StatusBar,
-} from 'react-native';
+import {View, ScrollView, StatusBar} from 'react-native';
 import Axios from 'axios';
 import styles from './style';
-import {Add, IconAlert} from '../../Assets/icons';
 import {CardHome, Gap, HeaderBanner, ItemList, Section} from '../../Components';
-import AddExpense from '../AddExpense';
-import {BottomSheet} from 'react-native-btr';
+import {IconAlert} from '../../Assets/icons';
 
 const Home = ({navigation}) => {
   const [name, setName] = useState();
-  const [calculate, setCalculate] = useState([]);
-  const [expensesData, setExpensesData] = useState([]);
-  const [incomeData, setIncomeData] = useState([]);
-
-  const getAllData = () => {
-    Axios.get('http://localhost:3000/data').then(response => {
-      data = response.data;
-      setName(data[0].profile.name);
-      setCalculate(data[0].calculate);
-      setExpensesData(data[0].expenses);
-      setIncomeData(data[0].income);
-      console.log(data[0].profile);
-    });
-  };
+  const [totalSaving, setTotalSaving] = useState();
+  const [totalIncome, setTotalIncome] = useState();
+  const [totalExpenses, setTotalExpenses] = useState();
+  const [listExpenses, setListExpenses] = useState([]);
 
   const getProfile = () => {
     Axios.get('http://localhost:3000/profile').then(response => {
       data = response.data;
-      setName(data);
+      setName(data.name);
     });
   };
-  const GetTotalData = () => {
-    Axios.get('http://localhost:3000/calculate').then(response => {
-      data = response.data;
-      setCalculate(data);
-      console.log(data[0].title);
-    });
+  const getTotalSaving = async () => {
+    const resp = await fetch('http://localhost:3000/calculate');
+    const json = await resp.json();
+    setTotalSaving(json[0].nominal);
   };
-  const getExpenses = () => {
+  const getTotalIncome = async () => {
+    const resp = await fetch('http://localhost:3000/calculate');
+    const json = await resp.json();
+    setTotalIncome(json[1].nominal);
+  };
+  const getTotalExpense = async () => {
+    const resp = await fetch('http://localhost:3000/calculate');
+    const json = await resp.json();
+    setTotalExpenses(json[2].nominal);
+  };
+  const getListExpenses = () => {
     Axios.get('http://localhost:3000/expenses').then(response => {
       data = response.data;
-      setExpensesData(data);
-      console.log(data);
+      setListExpenses(data);
     });
   };
-
   useEffect(() => {
-    // GetTotalData();
-    // getProfile();
-    // getExpenses();
-    getAllData();
+    getProfile();
+    getTotalSaving();
+    getTotalIncome();
+    getTotalExpense();
+    getListExpenses();
   }, []);
 
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={'black'} barStyle="light-content" />
-      <HeaderBanner time="Selamat Malam" callName={name} />
-      <CardHome />
+      <HeaderBanner time="Selamat Malam" callName={name} Icon={IconAlert} />
+      <CardHome
+        TotalTabungan={`Rp. ${totalSaving}`}
+        Income={`Rp. ${totalIncome}`}
+        Expenses={`Rp. ${totalExpenses}`}
+      />
       <Gap height={20} />
       {/* Section List History expense */}
       <ScrollView
@@ -76,10 +67,10 @@ const Home = ({navigation}) => {
           onPress={() => navigation.navigate('Statistic')}
         />
         <Gap height={16} />
-        {expensesData.map(data => {
+        {listExpenses.map((data, index) => {
           return (
             <ItemList
-              key={data.id}
+              key={index}
               title={data.category}
               date={data.date}
               nominal={data.nominal}

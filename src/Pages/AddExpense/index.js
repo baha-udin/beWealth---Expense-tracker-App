@@ -13,15 +13,11 @@ import {Colors, Fonts, ResWidth} from '../../Utils';
 import {ExpenseCard, IncomeCard} from './../../Components';
 const Top = createMaterialTopTabNavigator();
 
-// setCalculate([0].calculate);
-// setExpensesData([0].expenses);
-// setIncomeData([0].income);
-
 const AddExpense = () => {
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor={'black'} barStyle="dark-content" />
+      <StatusBar backgroundColor={'black'} barStyle="light-content" />
       <View style={styles.wrapTopMenu}>
         <Top.Navigator
           screenOptions={{

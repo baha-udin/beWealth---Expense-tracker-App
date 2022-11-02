@@ -12,10 +12,10 @@ import {ResWidth, Colors} from '../../../Utils';
 import moment from 'moment';
 import {Number} from '../../Atoms';
 
-const ItemList = ({key, title, date, nominal}) => {
+const ItemList = ({title, date, nominal}) => {
   const convertDate = moment(date).format('D MMMM YYYY');
   return (
-    <View style={styles.wrapList} key={key}>
+    <View style={styles.wrapList}>
       <View>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.date}>{convertDate}</Text>
@@ -35,6 +35,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 16,
+    borderBottomColor: 'gray',
+    borderBottomWidth: 0.2,
   },
   title: {
     fontSize: ResWidth(15),
