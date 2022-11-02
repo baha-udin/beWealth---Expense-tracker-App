@@ -52,9 +52,9 @@ const Home = ({navigation}) => {
       <StatusBar backgroundColor={'black'} barStyle="light-content" />
       <HeaderBanner time="Selamat Malam" callName={name} Icon={IconAlert} />
       <CardHome
-        TotalTabungan={`Rp. ${totalSaving}`}
-        Income={`Rp. ${totalIncome}`}
-        Expenses={`Rp. ${totalExpenses}`}
+        TotalTabungan={totalSaving}
+        Income={totalIncome}
+        Expenses={totalExpenses}
       />
       <Gap height={20} />
       {/* Section List History expense */}

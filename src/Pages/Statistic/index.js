@@ -6,6 +6,7 @@ import {
   View,
   StatusBar,
   TouchableOpacity,
+  useColorScheme,
 } from 'react-native';
 import styles from './style';
 import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
@@ -20,9 +21,14 @@ const Top = createMaterialTopTabNavigator();
 
 const Statistic = focused => {
   const navigation = useNavigation();
+  const isLightTheme = useColorScheme === 'light';
+
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor={'black'} barStyle="dark-content" />
+      <StatusBar
+        backgroundColor={'light-content'}
+        barStyle={isLightTheme ? 'light-content' : 'dark-content'}
+      />
       <View style={styles.wrapHeader}>
         <Text style={styles.title}>Recap</Text>
       </View>

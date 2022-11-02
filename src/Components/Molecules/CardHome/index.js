@@ -10,6 +10,7 @@ import {
 } from '../../../Assets';
 import {Gap} from '../../Atoms';
 import LinearGradient from 'react-native-linear-gradient';
+import {Number} from '../../Atoms';
 
 const CardHome = ({TotalTabungan, Income, Expenses}) => {
   return (
@@ -25,7 +26,7 @@ const CardHome = ({TotalTabungan, Income, Expenses}) => {
             <Text style={styles.label}>Total Tabungan</Text>
             <IconUp />
           </View>
-          <Text style={styles.nominal}>{TotalTabungan}</Text>
+          <Number style={styles.nominal} number={TotalTabungan} />
         </View>
         <TouchableOpacity>
           <IconBullet />
@@ -39,7 +40,7 @@ const CardHome = ({TotalTabungan, Income, Expenses}) => {
             <IconIncome />
             <Text style={styles.title}>Pemasukan</Text>
           </View>
-          <Text style={styles.number}>{Income}</Text>
+          <Number style={styles.number} number={Income} />
         </View>
         {/* section Expense */}
         <View>
@@ -47,7 +48,7 @@ const CardHome = ({TotalTabungan, Income, Expenses}) => {
             <IconExpense />
             <Text style={styles.title}>Pengeluaran</Text>
           </View>
-          <Text style={styles.numberExpense}>{Expenses}</Text>
+          <Number style={styles.numberExpense} number={Expenses} />
         </View>
       </View>
       {/* </View> */}

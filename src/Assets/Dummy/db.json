@@ -1,85 +1,49 @@
 {
-    "profile": {
-        "name": "Cheline"
+  "profile": {
+    "name": "Cheline"
+  },
+  "expenses": [
+    {
+      "category": "Belanja Bulanan",
+      "nominal": "23000",
+      "date": "2022-11-02T08:20:51.678Z",
+      "notes": "Beli sampo",
+      "id": 1
     },
-    "expenses": [
-        {
-            "id": 1,
-            "category": "Makan",
-            "nominal": 23000,
-            "date": "23-10-2022",
-            "notes": "Nasi padang"
-        },
-        {
-            "id": 2,
-            "category": "Kopi",
-            "nominal": 22000,
-            "date": "23-10-2022",
-            "notes": "Ngopi di Couvee"
-        },
-        {
-            "id": 3,
-            "category": "Bensin",
-            "nominal": 30000,
-            "date": "23-10-2022",
-            "notes": ""
-        },
-        {
-            "id": 4,
-            "category": "Rokok",
-            "nominal": 22000,
-            "date": "23-10-2022",
-            "notes": ""
-        },
-        {
-            "id": 4,
-            "category": "Makan",
-            "nominal": 15000,
-            "date": "23-10-2022",
-            "notes": "Nasi Goreng"
-        }
-    ],
-    "income": [
-        {
-            "id": 1,
-            "category": "Gaji Bulanan",
-            "nominal": 500000,
-            "date": "23-10-2022",
-            "notes": ""
-        },
-        {
-            "id": 2,
-            "category": "Bonus Project",
-            "nominal": 600000,
-            "date": "23-10-2022",
-            "notes": ""
-        },
-        {
-            "id": 3,
-            "category": "Bonus Tahunan",
-            "nominal": 4000000,
-            "date": "23-10-2022",
-            "notes": ""
-        }
-    ],
-    "calculate": [
-        {
-            "id": 1,
-            "title": "Total Saldo",
-            "nominal": 23000000,
-            "date": "23-10-2022"
-        },
-        {
-            "id": 2,
-            "title": "Total Income",
-            "nominal": 450000,
-            "date": "23-10-2022"
-        },
-        {
-            "id": 3,
-            "title": "Total Expenses",
-            "nominal": 2000000,
-            "date": "23-10-2022"
-        }
-    ]
+    {
+      "category": "Kopi",
+      "nominal": "20000",
+      "date": "2022-11-02T08:20:51.678Z",
+      "notes": "Di kafka",
+      "id": 2
+    }
+  ],
+  "income": [
+    {
+      "category": "Gaji bulanan",
+      "nominal": "8000000",
+      "date": "2022-11-02T08:22:28.001Z",
+      "id": 1
+    }
+  ],
+  "calculate": [
+    {
+      "id": 1,
+      "title": "Total Saldo",
+      "nominal": 23000000,
+      "date": "23-10-2022"
+    },
+    {
+      "id": 2,
+      "title": "Total Income",
+      "nominal": 450000,
+      "date": "23-10-2022"
+    },
+    {
+      "id": 3,
+      "title": "Total Expenses",
+      "nominal": 2000000,
+      "date": "23-10-2022"
+    }
+  ]
 }
