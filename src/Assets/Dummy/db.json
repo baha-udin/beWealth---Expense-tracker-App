@@ -1,144 +1,85 @@
 {
-  "data": [
-    {
-      "id": 1,
-      "profile": {
+    "profile": {
         "name": "Cheline"
-      },
-      "expenses": [
-        {
-          "id": 1,
-          "category": "Makan",
-          "nominal": 23000,
-          "date": "2022-10-19T06:40:16.645Z",
-          "notes": "Nasi padang"
-        },
-        {
-          "category": "Kopi",
-          "nominal": "23000",
-          "date": "2022-10-19T06:47:59.703Z",
-          "notes": "Couvee",
-          "id": 2
-        },
-        {
-          "category": "Bensin",
-          "nominal": "15000",
-          "date": "2022-10-19T06:50:35.349Z",
-          "notes": "Pertalite",
-          "id": 3
-        },
-        {
-          "category": "Kuota",
-          "nominal": "80000",
-          "date": "2022-10-19T07:11:58.378Z",
-          "id": 4
-        },
-        {
-          "category": "Investasi",
-          "nominal": "23000",
-          "date": "2022-10-22T09:36:59.903Z",
-          "id": 5
-        },
-        {
-          "category": "Parkir",
-          "nominal": "1000",
-          "date": "2022-10-24T00:57:52.048Z",
-          "notes": "Atm",
-          "id": 6
-        },
-        {
-          "category": "Cemilan",
-          "nominal": "5000",
-          "date": "2022-10-24T01:02:51.388Z",
-          "id": 7
-        },
-        {
-          "category": "Kopi",
-          "nominal": "20000",
-          "date": "2022-10-24T01:02:51.388Z",
-          "notes": "",
-          "id": 8
-        },
-        {
-          "category": "Bayar Kos",
-          "nominal": "500000",
-          "date": "2022-10-25T12:00:04.963Z",
-          "id": 9
-        },
-        {
-          "category": "Bayar Kos",
-          "nominal": "30000",
-          "date": "2022-10-21T06:15:00.000Z",
-          "id": 10
-        },
-        {
-          "category": "Belanja Bulanan",
-          "nominal": "25000",
-          "date": "2022-10-21T06:15:00.000Z",
-          "notes": "",
-          "id": 11
-        }
-      ],
-      "income": [
-        {
-          "id": 1,
-          "category": "Gaji Bulanan",
-          "nominal": 500000,
-          "date": "2022-10-19T07:05:22.734Z",
-          "notes": ""
-        },
-        {
-          "category": "Side project",
-          "nominal": "300000",
-          "date": "2022-10-13T01:01:00.000Z",
-          "id": 2
-        },
-        {
-          "category": "Side project",
-          "date": "2022-10-12T05:34:00.000Z",
-          "id": 3
-        },
-        {
-          "category": "Bonus project",
-          "nominal": "50000",
-          "date": "2022-10-30T05:35:04.848Z",
-          "id": 4
-        },
-        {
-          "category": "Investasi",
-          "nominal": "1000000",
-          "date": "2022-10-30T05:35:04.848Z",
-          "notes": "Return saham",
-          "id": 5
-        }
-      ],
-      "calculate": [
-        {
-          "id": 1,
-          "title": "Total Saldo",
-          "nominal": 23000000,
-          "date": "23-10-2022"
-        },
-        {
-          "id": 2,
-          "title": "Total Income",
-          "nominal": 450000,
-          "date": "23-10-2022"
-        },
-        {
-          "id": 3,
-          "title": "Total Expenses",
-          "nominal": 2000000,
-          "date": "23-10-2022"
-        }
-      ]
     },
-    {
-      "category": "Side project",
-      "nominal": "2300000",
-      "date": "2022-10-28T08:31:00.000Z",
-      "notes": "Project bikin web",
-      "id": 2
-    }
-  ]
+    "expenses": [
+        {
+            "id": 1,
+            "category": "Makan",
+            "nominal": 23000,
+            "date": "23-10-2022",
+            "notes": "Nasi padang"
+        },
+        {
+            "id": 2,
+            "category": "Kopi",
+            "nominal": 22000,
+            "date": "23-10-2022",
+            "notes": "Ngopi di Couvee"
+        },
+        {
+            "id": 3,
+            "category": "Bensin",
+            "nominal": 30000,
+            "date": "23-10-2022",
+            "notes": ""
+        },
+        {
+            "id": 4,
+            "category": "Rokok",
+            "nominal": 22000,
+            "date": "23-10-2022",
+            "notes": ""
+        },
+        {
+            "id": 4,
+            "category": "Makan",
+            "nominal": 15000,
+            "date": "23-10-2022",
+            "notes": "Nasi Goreng"
+        }
+    ],
+    "income": [
+        {
+            "id": 1,
+            "category": "Gaji Bulanan",
+            "nominal": 500000,
+            "date": "23-10-2022",
+            "notes": ""
+        },
+        {
+            "id": 2,
+            "category": "Bonus Project",
+            "nominal": 600000,
+            "date": "23-10-2022",
+            "notes": ""
+        },
+        {
+            "id": 3,
+            "category": "Bonus Tahunan",
+            "nominal": 4000000,
+            "date": "23-10-2022",
+            "notes": ""
+        }
+    ],
+    "calculate": [
+        {
+            "id": 1,
+            "title": "Total Saldo",
+            "nominal": 23000000,
+            "date": "23-10-2022"
+        },
+        {
+            "id": 2,
+            "title": "Total Income",
+            "nominal": 450000,
+            "date": "23-10-2022"
+        },
+        {
+            "id": 3,
+            "title": "Total Expenses",
+            "nominal": 2000000,
+            "date": "23-10-2022"
+        }
+    ]
 }

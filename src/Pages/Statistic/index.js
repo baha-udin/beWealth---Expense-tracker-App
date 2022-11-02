@@ -48,10 +48,10 @@ const Statistic = focused => {
               bottom: '10%',
               left: 10,
               right: 10,
+              paddingHorizontal: 4,
               borderRadius: 30,
               backgroundColor: Colors.background.green,
               marginRight: '5%',
-              textTransform: 'none',
             },
             tabBarLabelStyle: ({focused}) => ({
               textTransform: 'lowercase',

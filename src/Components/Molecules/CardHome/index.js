@@ -45,7 +45,7 @@ const CardHome = ({TotalTabungan, Income, Expenses}) => {
         <View>
           <View style={styles.wrapLabel}>
             <IconExpense />
-            <Text style={styles.title}>Pemasukan</Text>
+            <Text style={styles.title}>Pengeluaran</Text>
           </View>
           <Text style={styles.numberExpense}>{Expenses}</Text>
         </View>

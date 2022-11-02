@@ -7,23 +7,44 @@ import {IconAlert} from '../../Assets/icons';
 
 const Home = ({navigation}) => {
   const [name, setName] = useState();
-  const [calculate, setCalculate] = useState([]);
-  const [expensesData, setExpensesData] = useState([]);
-  const [incomeData, setIncomeData] = useState([]);
+  const [totalSaving, setTotalSaving] = useState();
+  const [totalIncome, setTotalIncome] = useState();
+  const [totalExpenses, setTotalExpenses] = useState();
+  const [listExpenses, setListExpenses] = useState([]);
 
-  const getAllData = () => {
-    Axios.get('http://localhost:3000/data').then(response => {
+  const getProfile = () => {
+    Axios.get('http://localhost:3000/profile').then(response => {
       data = response.data;
-      setName(data[0].profile.name);
-      setCalculate(data[0].calculate);
-      setExpensesData(data[0].expenses);
-      setIncomeData(data[0].income);
-      console.log(data[0].calculate[0].nominal);
+      setName(data.name);
     });
   };
-
+  const getTotalSaving = async () => {
+    const resp = await fetch('http://localhost:3000/calculate');
+    const json = await resp.json();
+    setTotalSaving(json[0].nominal);
+  };
+  const getTotalIncome = async () => {
+    const resp = await fetch('http://localhost:3000/calculate');
+    const json = await resp.json();
+    setTotalIncome(json[1].nominal);
+  };
+  const getTotalExpense = async () => {
+    const resp = await fetch('http://localhost:3000/calculate');
+    const json = await resp.json();
+    setTotalExpenses(json[2].nominal);
+  };
+  const getListExpenses = () => {
+    Axios.get('http://localhost:3000/expenses').then(response => {
+      data = response.data;
+      setListExpenses(data);
+    });
+  };
   useEffect(() => {
-    getAllData();
+    getProfile();
+    getTotalSaving();
+    getTotalIncome();
+    getTotalExpense();
+    getListExpenses();
   }, []);
 
   return (
@@ -31,9 +52,9 @@ const Home = ({navigation}) => {
       <StatusBar backgroundColor={'black'} barStyle="light-content" />
       <HeaderBanner time="Selamat Malam" callName={name} Icon={IconAlert} />
       <CardHome
-        TotalTabungan={`Rp. ${calculate[0].nominal}`}
-        Income={`Rp. ${calculate[1].nominal}`}
-        Expenses={`Rp. ${calculate[2].nominal}`}
+        TotalTabungan={`Rp. ${totalSaving}`}
+        Income={`Rp. ${totalIncome}`}
+        Expenses={`Rp. ${totalExpenses}`}
       />
       <Gap height={20} />
       {/* Section List History expense */}
@@ -46,10 +67,10 @@ const Home = ({navigation}) => {
           onPress={() => navigation.navigate('Statistic')}
         />
         <Gap height={16} />
-        {expensesData.map(data => {
+        {listExpenses.map((data, index) => {
           return (
             <ItemList
-              key={data.id}
+              key={index}
               title={data.category}
               date={data.date}
               nominal={data.nominal}

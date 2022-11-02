@@ -7,17 +7,12 @@ const ListDays = () => {
   const [data, setData] = useState([]);
   const getAllData = async () => {
     try {
-      const data = await fetch('http://localhost:3000/data');
+      const data = await fetch('http://localhost:3000/expenses');
       const response = await data.json();
-      setData(response[0].expenses);
+      setData(response);
     } catch (error) {
       console.log(error);
     }
-
-    // Axios.get('http://localhost:3000/data').then(response => {
-    //   data = response.data;
-    //   setData(data[0].expenses);
-    // });
   };
   useEffect(() => {
     getAllData();
