@@ -8,6 +8,7 @@ import ImgInformation from './ImgInformation.png';
 import ImgPerson from './ImgPerson.png';
 import ImgPrivacy from './ImgPrivacy.png';
 import ImgSecurity from './ImgSecurity.png';
+import EmptyDefault from './empty.jpg';
 
 export {
   backgroundSplash,
@@ -20,4 +21,5 @@ export {
   ImgPerson,
   ImgPrivacy,
   ImgSecurity,
+  EmptyDefault,
 };

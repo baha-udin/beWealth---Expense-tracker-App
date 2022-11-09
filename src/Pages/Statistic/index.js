@@ -26,8 +26,9 @@ const Statistic = focused => {
   return (
     <View style={styles.container}>
       <StatusBar
-        backgroundColor={'light-content'}
-        barStyle={isLightTheme ? 'light-content' : 'dark-content'}
+        translucent
+        backgroundColor={'dark-content'}
+        barStyle={'light-content'}
       />
       <View style={styles.wrapHeader}>
         <Text style={styles.title}>Recap</Text>

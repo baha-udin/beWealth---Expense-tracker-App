@@ -16,6 +16,19 @@
       "date": "2022-11-02T08:20:51.678Z",
       "notes": "Di kafka",
       "id": 2
+    },
+    {
+      "category": "Rokok",
+      "nominal": "23000",
+      "date": "2022-11-09T00:05:30.179Z",
+      "id": 3
+    },
+    {
+      "category": "Belanja Bulanan",
+      "nominal": "5000",
+      "date": "2022-11-09T00:12:59.176Z",
+      "notes": "Beli tempe",
+      "id": 4
     }
   ],
   "income": [

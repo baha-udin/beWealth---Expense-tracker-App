@@ -19,7 +19,6 @@ const CardHome = ({TotalTabungan, Income, Expenses}) => {
       style={styles.cardInformation}
       start={{x: 0, y: 1.4}}
       end={{x: 1, y: 1.3}}>
-      {/* <View style={styles.cardInformation}> */}
       <View style={styles.wrapTopInformation}>
         <View style={styles.wrapSaving}>
           <View style={styles.wrapLabel}>
@@ -51,7 +50,6 @@ const CardHome = ({TotalTabungan, Income, Expenses}) => {
           <Number style={styles.numberExpense} number={Expenses} />
         </View>
       </View>
-      {/* </View> */}
     </LinearGradient>
   );
 };
@@ -65,7 +63,7 @@ const styles = StyleSheet.create({
     paddingVertical: 25,
     paddingHorizontal: 18,
     borderRadius: 12,
-    marginTop: ResHeight(24),
+    marginTop: ResHeight(6),
     shadowColor: Colors.text.grayblur,
     shadowOffset: {
       height: 1,
