@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginTop: Platform.OS == 'ios' ? -220 : -250,
-    paddingHorizontal: ResWidth(24),
+    paddingHorizontal: ResWidth(20),
   },
   wrapUser: {
     flexDirection: 'column',

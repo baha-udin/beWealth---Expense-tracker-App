@@ -13,7 +13,6 @@ target 'beWealth' do
   )
 
   pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
-  pod 'BVLinearGradient', :path => '../node_modules/react-native-linear-gradient'
   pod 'React-RCTText', :path => '../node_modules/react-native/Libraries/Text', :modular_headers => true
 
   target 'beWealthTests' do

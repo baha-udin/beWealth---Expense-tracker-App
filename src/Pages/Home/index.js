@@ -12,6 +12,7 @@ import {
 } from '../../Components';
 import {IconAlert} from '../../Assets/icons';
 import {EmptyDefault} from '../../Assets';
+import {Fonts} from '../../Utils';
 
 const Home = ({navigation}) => {
   let myDate = new Date();
@@ -69,15 +70,20 @@ const Home = ({navigation}) => {
     getTotalIncome();
     getTotalExpense();
     getListExpenses();
-  }, []);
+  }, [listExpenses]);
 
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={'black'} barStyle="light-content" />
       <HeaderBanner time={`${greet}`} callName={name} Icon={IconAlert} />
       <View style={{paddingHorizontal: 20, marginTop: 28}}>
-        <Text style={{color: 'white', fontSize: 16, fontWeight: '400'}}>
-          Ini catatan Keuangan Kamu:
+        <Text
+          style={{
+            color: 'white',
+            fontSize: 16,
+            fontFamily: Fonts.primary[400],
+          }}>
+          Ini catatan keuangan kamu:
         </Text>
       </View>
       <CardHome
@@ -85,7 +91,7 @@ const Home = ({navigation}) => {
         Income={totalIncome}
         Expenses={`-${totalExpenses}`}
       />
-      <Gap height={20} />
+      <Gap height={28} />
       {/* Section List History expense */}
       <ScrollView
         style={styles.wrapHistory}

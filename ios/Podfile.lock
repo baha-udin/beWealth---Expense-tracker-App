@@ -355,7 +355,7 @@ PODS:
     - React-Core
   - RNGestureHandler (2.7.1):
     - React-Core
-  - RNReanimated (2.11.0):
+  - RNReanimated (2.4.0):
     - DoubleConversion
     - FBLazyVector
     - FBReactNativeSpec
@@ -363,6 +363,7 @@ PODS:
     - RCT-Folly
     - RCTRequired
     - RCTTypeSafety
+    - React
     - React-callinvoker
     - React-Core
     - React-Core/DevSupport
@@ -385,8 +386,14 @@ PODS:
   - RNScreens (3.18.2):
     - React-Core
     - React-RCTImage
+  - RNSentry (4.8.0):
+    - React-Core
+    - Sentry (= 7.29.0)
   - RNSVG (13.4.0):
     - React-Core
+  - Sentry (7.29.0):
+    - Sentry/Core (= 7.29.0)
+  - Sentry/Core (7.29.0)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -453,6 +460,7 @@ DEPENDENCIES:
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
+  - "RNSentry (from `../node_modules/@sentry/react-native`)"
   - RNSVG (from `../node_modules/react-native-svg`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -471,6 +479,7 @@ SPEC REPOS:
     - fmt
     - libevent
     - OpenSSL-Universal
+    - Sentry
     - YogaKit
 
 EXTERNAL SOURCES:
@@ -550,6 +559,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
     :path: "../node_modules/react-native-screens"
+  RNSentry:
+    :path: "../node_modules/@sentry/react-native"
   RNSVG:
     :path: "../node_modules/react-native-svg"
   Yoga:
@@ -605,12 +616,14 @@ SPEC CHECKSUMS:
   RNCMaskedView: 0e1bc4bfa8365eba5fbbb71e07fbdc0555249489
   RNDateTimePicker: 3f32aa2247836c12618d346113e5e82ea60ddd9c
   RNGestureHandler: b7a872907ee289ada902127f2554fa1d2c076122
-  RNReanimated: 6223f2b7f74dcbcc60daddf631b81c088d0959ac
+  RNReanimated: fb56abd99a5d7efe91ae3c7bf3cd3663cee1b21b
   RNScreens: 34cc502acf1b916c582c60003dc3089fa01dc66d
+  RNSentry: db7fd7b66efda28885e4e904a8b5e7349aec61c1
   RNSVG: 07dbd870b0dcdecc99b3a202fa37c8ca163caec2
+  Sentry: 4272663eb0eda312024d795ca3f5a562a8ce5e18
   Yoga: e7dc4e71caba6472ff48ad7d234389b91dadc280
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: a81294bb6d270c4c234f2d9eab3867b96dcdf822
+PODFILE CHECKSUM: 0867f691b5e66014b858cbc7a191fd44a43d0bbb
 
 COCOAPODS: 1.11.3

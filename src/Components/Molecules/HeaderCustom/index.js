@@ -11,7 +11,7 @@ import {HeaderIlustration, IconAlert, IconArrowDown} from '../../../Assets';
 import {IconBack, IconBullet} from '../../../Assets';
 import {Colors, ResWidth, ResHeight, Fonts} from '../../../Utils';
 
-const HeaderCustom = ({onPress, onPressBack, title, navigation}) => {
+const HeaderCustom = ({onPress, onPressBack, title, navigation, Icon}) => {
   return (
     <View style={styles.header}>
       <Image source={HeaderIlustration} style={styles.imgHeader} />
@@ -22,9 +22,7 @@ const HeaderCustom = ({onPress, onPressBack, title, navigation}) => {
         <View style={styles.wrapUser}>
           <Text style={styles.label}>{title}</Text>
         </View>
-        <TouchableOpacity>
-          <IconAlert />
-        </TouchableOpacity>
+        <TouchableOpacity>{Icon}</TouchableOpacity>
       </View>
     </View>
   );
