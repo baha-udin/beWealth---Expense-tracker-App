@@ -73,7 +73,6 @@ const IncomeCard = ({navigation}) => {
           setCategory('');
           setTotal('');
           setNotes('');
-          setVisible(false);
         })
         .catch(error => {
           console.log(error);

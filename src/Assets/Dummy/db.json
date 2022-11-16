@@ -37,6 +37,12 @@
       "nominal": "8000000",
       "date": "2022-11-02T08:22:28.001Z",
       "id": 1
+    },
+    {
+      "category": "Side project",
+      "nominal": "400000",
+      "date": "2022-11-17T08:45:00.000Z",
+      "id": 2
     }
   ],
   "calculate": [

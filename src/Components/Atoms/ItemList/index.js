@@ -7,10 +7,10 @@ import {
   FlatList,
   ScrollView,
 } from 'react-native';
-import {Gap} from '../../Atoms';
 import {ResWidth, Colors} from '../../../Utils';
 import moment from 'moment';
-import {Number} from '../../Atoms';
+import Gap from '../../Atoms/Gap';
+import Number from '../../Atoms/Number';
 
 const ItemList = ({title, date, nominal}) => {
   const convertDate = moment(date).format('D MMMM YYYY');
@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
     borderBottomColor: 'gray',
     borderBottomWidth: 0.2,
+    paddingBottom: 2,
   },
   title: {
     fontSize: ResWidth(15),
