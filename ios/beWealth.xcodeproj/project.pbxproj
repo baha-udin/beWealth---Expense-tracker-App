@@ -21,6 +21,7 @@
 		CFD61F311BEA44F0AF4575CC /* PlusJakartaSans-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B988E6997EEE491AB237C4FF /* PlusJakartaSans-ExtraLight.ttf */; };
 		D78778325EEEA3E93F2C6D98 /* libPods-beWealth-beWealthTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2938BB27902C536479B69EBA /* libPods-beWealth-beWealthTests.a */; };
 		F66D51F4A1AF4C1891C0FE81 /* PlusJakartaSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 596FFF5AB62A4B30B81A9D14 /* PlusJakartaSans-Regular.ttf */; };
+		E19069123E3A49C9B7901371 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = 89765DAD84D544B1BD2ECB4D /* index.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		D4CA0E5C6288E24FC73ED10F /* Pods-beWealth-beWealthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-beWealth-beWealthTests.release.xcconfig"; path = "Target Support Files/Pods-beWealth-beWealthTests/Pods-beWealth-beWealthTests.release.xcconfig"; sourceTree = "<group>"; };
 		D9DE8F3BBDFC45B2B0E06E5D /* PlusJakartaSans-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "PlusJakartaSans-Light.ttf"; path = "../src/Utils/fonts/PlusJakartaSans-Light.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		89765DAD84D544B1BD2ECB4D /* index.js */ = {isa = PBXFileReference; name = "index.js"; path = "../src/Utils/fonts/index.js"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				2EA61A6254914A05A5486DAA /* PlusJakartaSans-Medium.ttf */,
 				596FFF5AB62A4B30B81A9D14 /* PlusJakartaSans-Regular.ttf */,
 				06B8A7E805444ADAB237820C /* PlusJakartaSans-SemiBold.ttf */,
+				89765DAD84D544B1BD2ECB4D /* index.js */,
 			);
 			name = Resources;
 			path = "";
@@ -282,6 +285,7 @@
 				5BE4540F77F04F738742BA12 /* PlusJakartaSans-Medium.ttf in Resources */,
 				F66D51F4A1AF4C1891C0FE81 /* PlusJakartaSans-Regular.ttf in Resources */,
 				611618747C044340A7978723 /* PlusJakartaSans-SemiBold.ttf in Resources */,
+				E19069123E3A49C9B7901371 /* index.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
